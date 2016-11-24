@@ -14,8 +14,8 @@ export class DashboardComponent implements OnInit {
      this.books.sort((a,b) =>  b.rating - a.rating);
   }
 
-  addBook(title, description){
-    this.books.push(new Book(title.value,description.value));
+  addBook(newBook: Book){
+    this.books.push(newBook);
   }
 
   deleteBook(i) {
