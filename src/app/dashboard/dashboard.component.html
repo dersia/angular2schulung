@@ -1,1 +1,13 @@
-<app-book *ngFor="let buch of books" [book]="buch"></app-book>
+<div class="form">
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" name="title" #title>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" name="description" #description></textarea>
+    </div>
+    <button class="btn btn-success glyphicon glyphicon-plus" (click)="addBook(title,description)"></button>
+</div>
+
+<app-book *ngFor="let buch of books; let i = index" (rated)="sortMyBooks($event)" (delete)="deleteBook(i)" [book]="buch"></app-book>
