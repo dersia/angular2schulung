@@ -7,7 +7,9 @@
         <label for="description">Description:</label>
         <textarea class="form-control" name="description" #description></textarea>
     </div>
-    <button class="btn btn-success glyphicon glyphicon-plus" (click)="addBook(title,description)"></button>
+    <button class="btn btn-success" (click)="addBook(title,description)">Add <span class="glyphicon glyphicon-plus"></span></button>
 </div>
+
+<hr />
 
 <app-book *ngFor="let buch of books; let i = index" (rated)="sortMyBooks($event)" (delete)="deleteBook(i)" [book]="buch"></app-book>
